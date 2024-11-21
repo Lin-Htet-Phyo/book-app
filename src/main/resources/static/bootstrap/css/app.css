@@ -1,0 +1,69 @@
+
+.navbar .nav-link{
+    color: white !important;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+.navbar .navbar-brand{
+    color: white !important;
+    font-size: 2rem !important;
+}
+
+.navbar .nav-item.active{
+    border-left: lightslategray 4px solid;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.carousel-item{
+    height: 450px;
+}
+
+.carousel-image-1{
+    background: url("https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-size: cover;
+}
+
+.carousel-image-2{
+    background: url("https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-size: cover;
+}
+.carousel-image-3{
+    background: url("https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80");
+    background-size: cover;
+}
+.home-icon i{
+    font-size: 36px;
+}
+#home-heading{
+    position: relative;
+    min-height: 200px;
+    background: url("../../img/lights.jpg");
+    background-attachment:fixed ;
+    background-repeat: no-repeat;
+    color: white;
+}
+#quote i{
+    color: deepskyblue;
+    opacity: 0.3;
+}
+#newsettlers{
+    background: #6c757d!important;
+
+}
+#footer{
+    background: #0b2e13!important;
+    color: white;
+}
+
+
+
