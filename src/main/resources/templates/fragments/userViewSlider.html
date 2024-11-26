@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!--Slider-->
+<div th:fragment="slider">
+    <div id="overlay">
+        <section>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item carousel-image-1 active">
+                        <div class="container">
+                            <div class="carousel-caption d-none d-md-block text-white text-right">
+                                <h1 class="display-3">Catch-UP Dream</h1>
+                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Exercitationem, nesciunt?</p>
+                                <button class="btn btn-info btn-lg">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item carousel-image-2">
+                        <div class="carousel-caption d-none d-md-block text-white text-center">
+                            <h1 class="display-3">Do What You Want</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem,
+                                nesciunt?</p>
+                            <button class="btn btn-info btn-lg">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item carousel-image-3">
+                        <div class="carousel-caption d-none d-md-block text-white text-left">
+                            <h1 class="display-3">Be Smart</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem,
+                                nesciunt?</p>
+                            <button class="btn btn-info btn-lg">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#carouselExampleControls" data-slide="prev" class="carousel-control-prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+
+                <a href="#carouselExampleControls" data-slide="next" class="carousel-control-next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </section>
+
+        <section th:fragment="homeIcon" class="py-5 home-icon">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 text-center">
+                        <i class="fas fa-book"></i>
+                        <h3>Explore</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, libero.</p>
+                    </div>
+
+                    <div class="col-md-4 mb-3 text-center">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Find</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, libero.</p>
+                    </div>
+
+                    <div class="col-md-4 mb-3 text-center">
+                        <i class="fas fa-store"></i>
+                        <h3>Buy It</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, libero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="bestsellers" class="container-fluid bg-light text-center">
+                <h3 class="mb-3 p-5">BestSellers</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <img th:src="${allbooks.get(3).imgUrl}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${allbooks.get(3).title}"></h5>
+                                    <p class="card-text" th:text="${allbooks.get(3).description}"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="btn btn-link">Buy</a>
+                                        <a class="card-text" th:text="${allbooks.get(3).price + ' $'}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <img th:src="${allbooks.get(1).imgUrl}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${allbooks.get(1).title}"></h5>
+                                    <p class="card-text" th:text="${allbooks.get(1).description}"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="btn btn-link">Buy</a>
+                                        <a class="card-text" th:text="${allbooks.get(1).price + ' $'}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <img th:src="${allbooks.get(2).imgUrl}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${allbooks.get(2).title}"></h5>
+                                    <p class="card-text" th:text="${allbooks.get(2).description}"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="btn btn-link">Buy</a>
+                                        <a class="card-text" th:text="${allbooks.get(2).price + ' $'}"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="home-heading" class="py-5">
+            <div class="dark-overlay">
+                <div class="row">
+                    <div class="col">
+                        <div class="container text-center">
+                            <h3>Are You Ready to Get Started?</h3>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, mollitia?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col">
+                        <h1>BENEFITS OF READING</h1>
+                        <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
+                            reprehenderit, unde. Alias aperiam asperiores, deserunt doloremque ducimus eaque ex expedita
+                            fugiat harum illum iste natus non officia quod repellat sapiente.</p>
+                        <a th:href="@{/shop/show-all-books}" class="btn btn-lg btn-outline-info">LEARN MORE</a>
+                    </div>
+                    <div class="col">
+                        <img src="../../static/img/laptop.png" th:src="@{/img/laptop.png}" class="img-fluid"
+                             alt="Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container py-4 text-center">
+                <h1>WHAT OTHERS SAYING</h1>
+                <h3 class="text-info">#BOOKSHELF</h3>
+                <div class="row">
+                    <div class="col-md-3" th:each="book : ${allbooks}">
+                        <div th:if="book.imgUrl != null">
+                            <img th:src="${book.imgUrl}" class="img-thumbnail mb-3" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="quote" class="container py-5">
+                <blockquote class="blockquote text-center">
+                    <h3><i class="fas fa-quote-left"></i></h3>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur deleniti eius impedit ipsa laudantium natus pariatur tempora vel voluptatum? A ad architecto assumenda error omnis sint tempora temporibus velit!</span><span>Consectetur cupiditate ducimus expedita facere iste laudantium minima non numquam odit officia, quia sapiente unde voluptas. Ab doloremque ducimus inventore minima molestias unde? Assumenda corporis inventore magni minima ratione sint.</span>
+                    </p>
+                    <footer class="blockquote-footer">Thomas Hardy</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="newsettlers">
+            <div class="container text-white text-center py-5">
+                <p class="lead">EXPLORE AND ENJOY OUR BOOKSHELF AND MAKE HAPPY</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <form action="#" class="form-inline">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter Email" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">JOIN NOW</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer" class="p-3">
+            <ul class="nav d-flex justify-content-center flex-column flex-sm-row">
+                <li class="nav-item">
+                    <a href="" class="nav-link text-white">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-white">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-white">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-white">CONTACT US</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+</body>
+</html>

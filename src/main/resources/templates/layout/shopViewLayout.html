@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html th:fragment="layout(main)" xmlns:th="http://www.thymeleaf.org">
+<html th:fragment="layout(main)" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Book Admin</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/bootstrap/css/app.css"
+          th:href="@{/bootstrap/css/app.css}">
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
           th:href="@{/bootstrap/css/bootstrap.min.css}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-
-<div th:replace="~{fragments/navbar.html :: navigation}"></div>
-<div th:replace="~{fragments/main :: show(${main})}"></div>
+<nav th:replace="~{fragments/userViewHead.html :: userHead}"></nav>
+<div th:insert="fragments/shopViewHead.html :: shopViewHead"></div>
+<div class="container">
+    <div class="text-right">
+        <h3><a th:href="@{/cart/view}"><i class="fas fa-cart-plus"></i></a></h3> &nbsp; <span
+            class="badge badge-success text-white" th:text="${cartSize}"></span></h3>
+    </div>
+</div>
+<div th:replace="${main}"></div>
 <div th:insert="fragments/footer.html :: footer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

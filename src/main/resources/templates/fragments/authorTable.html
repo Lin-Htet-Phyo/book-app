@@ -2,41 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
-<div th:fragment="authorTable" class="row">
-    <div class="col">
-        <div class="card">
-            <div class="card-header">
-                <h4>Author List</h4>
-            </div>
-            <div class="card-body">
-                <table class="table table-striped">
-                    <thead class="table-dark">
-                    <tr>
-                        <th>Id</th>
-                        <th>Author Name</th>
-                        <th>Date of Birth</th>
-                        <th>Zip Code</th>
-                        <th>Street Name</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="auth : ${authors}">
-                        <td th:text="${auth.id}"></td>
-                        <td th:text="${auth.name}"></td>
-                        <td th:text="${auth.dateOfBirth}"></td>
-                        <td th:text="${auth.address.zipCode}"></td>
-                        <td th:text="${auth.address.streetName}"></td>
-                        <td th:text="${auth.address.phoneNumber}"></td>
-                        <td th:text="${auth.address.email}"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
+<table th:fragment="authorTable" class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>DateOfBirth</th>
+        <th>ZipCode</th>
+        <th>PhoneNumber</th>
+        <th>StreetName</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.name}"></td>
+        <td th:text="${author.dateOfBirth}"></td>
+        <td th:text="${author.address.zipCode}"></td>
+        <td th:text="${author.address.phoneNumber}"></td>
+        <td th:text="${author.address.streetName}"></td>
+        <td th:text="${author.address.email}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

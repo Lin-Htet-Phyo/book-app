@@ -4,13 +4,14 @@
 <body>
 <div th:fragment="bookTable" class="row">
     <div class="col">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-header">
                 <h4>Latest Books</h4>
             </div>
+
             <div class="card-body">
                 <table class="table table-striped">
-                    <thead class="table-dark">
+                    <thead class="thead-dark">
                     <tr>
                         <th>Id</th>
                         <th>Title</th>
@@ -21,17 +22,19 @@
                         <th>Author Name</th>
                     </tr>
                     </thead>
+
                     <tbody>
                     <tr th:each="book : ${books}">
                         <td th:text="${book.id}"></td>
                         <td th:text="${book.title}"></td>
                         <td th:text="${book.price}"></td>
                         <td th:text="${book.yearPublished}"></td>
-                        <td th:text="${#strings.substring(book.description, 0, 6) + '...'}"></td>
+                        <td th:text="${#strings.substring(book.description,0,6) + '...'}"></td>
                         <td th:text="${book.category.categoryName}"></td>
                         <td th:text="${book.author.name}"></td>
                     </tr>
                     </tbody>
+
                 </table>
             </div>
         </div>

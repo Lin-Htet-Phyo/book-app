@@ -1,8 +1,8 @@
 package com.example.myapp.ds;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,7 +13,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +21,12 @@ public class Author {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
     @Embedded
-    private Address address = new Address();
+    private Address address=new Address();
     @OneToMany(mappedBy = "author")
-    private List<Book> bookList = new ArrayList<>();
+    private List<Book> bookList=
+            new ArrayList<>();
 
-    public void addBook(Book book) {
+    public void addBook(Book book){
         book.setAuthor(this);
         bookList.add(book);
     }

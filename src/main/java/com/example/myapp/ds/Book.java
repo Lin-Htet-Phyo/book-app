@@ -1,8 +1,8 @@
 package com.example.myapp.ds;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,20 +13,20 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    private Double price;
+    private double price;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate yearPublished;
     private String description;
     private String imgUrl;
     @CollectionTable(name = "comments")
     @ElementCollection
-    private List<String> comments = new ArrayList<>();
+    private List<String> comments=
+            new ArrayList<>();
     @ManyToOne
     private Category category;
     @ManyToOne
@@ -35,5 +35,10 @@ public class Book {
     private Integer categoryId;
     @Transient
     private Integer authorId;
+    @ManyToMany(mappedBy = "books")
+    private List<Customer> customers=
+            new ArrayList<>();
+
+
 
 }
